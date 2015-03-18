@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox fx:id="applicationBounds" prefHeight="499.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem fx:id="newChat" mnemonicParsing="false" onAction="#newMenu" text="New Chat" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem fx:id="inviteChat" mnemonicParsing="false" onAction="#inviteChat" text="Invite to Chat" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="closeChat" mnemonicParsing="false" onAction="#closeWindow" text="Close Chat" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="saveChat" mnemonicParsing="false" onAction="#saveChat" text="Save ChatLog" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="preferences" mnemonicParsing="false" onAction="#colorPicker" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="quitApp" mnemonicParsing="false" onAction="#endApplication" text="Quit ChatApp" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About ChatApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="499.0" prefWidth="640.0" VBox.vgrow="ALWAYS">
+      <children>
+            <ScrollPane fx:id="scroll" layoutY="-3.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="357.0" prefViewportWidth="640.0" prefWidth="640.0">
+               <content>
+                  <ListView fx:id="chatArea" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="637.0" />
+               </content>
+            </ScrollPane>
+            <TextField fx:id="messageText" layoutX="59.0" layoutY="355.0" onAction="#sendMessage" prefHeight="25.0" prefWidth="444.0" />
+            <Button fx:id="send" layoutX="6.0" layoutY="355.0" mnemonicParsing="false" onAction="#sendMessage" text="Send" />
+            <Button fx:id="attach" layoutX="5.0" layoutY="387.0" mnemonicParsing="false" onAction="#attachFile" text="Attach" />
+            <Button fx:id="receive" layoutX="255.0" layoutY="387.0" mnemonicParsing="false" onAction="#testReceiveMessage" text="Recieve Chat" />
+            <ColorPicker layoutX="103.0" layoutY="387.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
